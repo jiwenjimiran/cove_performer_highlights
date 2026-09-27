@@ -1,0 +1,14 @@
+{
+  "id": "io.github.jiwenjimiran.performer-highlights",
+  "name": "Performer Highlights Extension",
+  "version": "1.0.0",
+  "description": "Red outlines around favorite performer badges.",
+  "author": "jiwenji",
+  "url": "https://github.com/jiwenjimiran/cove_performer_highlights",
+  "kind": "extension",
+  "categories": ["ui", "style"],
+  "minCoveVersion": "1.5.1",
+  "entryDll": "Cove.PerformerHighlights.dll",
+  "jsBundle": "assets/index.mjs",
+  "cssBundle": "assets/highlights.css"
+}

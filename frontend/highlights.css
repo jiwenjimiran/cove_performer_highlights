@@ -1,0 +1,5 @@
+.performer-badge[data-performer-highlight="favorite"] {
+  border-color: var(--color-red-400) !important;
+  outline: 2px solid var(--color-red-400);
+  outline-offset: -2px;
+}

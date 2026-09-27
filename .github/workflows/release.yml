@@ -1,0 +1,35 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Validate version
+        shell: pwsh
+        run: |
+          $manifest = Get-Content src/PerformerHighlights/extension.json -Raw | ConvertFrom-Json
+          if ($env:GITHUB_REF_NAME -ne "v$($manifest.version)") { throw 'Tag must match manifest version.' }
+      - name: Package
+        shell: pwsh
+        run: ./scripts/package.ps1
+      - name: Publish release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $zip = (Get-ChildItem artifacts/*.zip).FullName
+          gh release create $env:GITHUB_REF_NAME $zip --title "Performer Highlights Extension $env:GITHUB_REF_NAME" --notes-file CHANGELOG.md
