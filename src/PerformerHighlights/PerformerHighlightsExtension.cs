@@ -7,8 +7,8 @@ public sealed class PerformerHighlightsExtension : IExtension, IUIExtension
 {
     public string Id => "io.github.jiwenjimiran.performer-highlights";
     public string Name => "Performer Highlights Extension";
-    public string Version => "1.0.0";
-    public string? Description => "Red outlines around favorite performer badges.";
+    public string Version => "1.0.1";
+    public string? Description => "Red 1px borders around favorite performer badges.";
     public string? Author => "jiwenji";
     public string? Url => "https://github.com/jiwenjimiran/cove_performer_highlights";
     public string? IconUrl => null;

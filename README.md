@@ -1,6 +1,6 @@
 # Performer Highlights Extension
 
-Adds a red outline to favorite performers' `.performer-badge` badges in Cove cards, using `var(--color-red-400)`. Highlights follow the signed-in user's favorites, including newly loaded cards and changes made with Cove's favorite controls. No configuration required.
+Adds a red 1px border to favorite performers' `.performer-badge` badges in Cove cards, using `var(--color-red-400)`. Highlights follow the signed-in user's favorites, including newly loaded cards and changes made with Cove's favorite controls. No configuration required.
 
 ## Install
 
@@ -8,11 +8,11 @@ Requires **Cove 1.5.1 or newer**.
 
 1. Download the ZIP from [the latest release](https://github.com/jiwenjimiran/cove_performer_highlights/releases/latest).
 2. In Cove, open **Settings → Extensions → Install from ZIP**, select the ZIP, and confirm installation.
-3. Enable the extension if needed and refresh Cove once. Favorite performer badges now have a red outline.
+3. Enable the extension if needed and refresh Cove once. Favorite performer badges now have a red 1px border.
 
 You can also use **Install from URL** with the release ZIP's download URL. Disabling or uninstalling the extension removes the highlights.
 
-The extension reads favorite state through Cove's authenticated engagement API. It does not modify performers or favorites and makes no external requests. Read access to performer engagement is required. Badges must link to a performer; plain text badges without an identity are left alone. The outline is drawn inside the badge to avoid clipping in card containers. Other browser sessions' changes refresh within 30 seconds while the page is active.
+The extension reads favorite state through Cove's authenticated engagement API. It does not modify performers or favorites and makes no external requests. Read access to performer engagement is required. Badges must link to a performer; plain text badges without an identity are left alone. Other browser sessions' changes refresh within 30 seconds while the page is active.
 
 ## Development
 
